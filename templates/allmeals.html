@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Mealfinder</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" 
+rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" 
+crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" 
+crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<div class="container mt-5">
+<center>
+
+<h1><var>$ " " "Mealfinder" " " $</var></h1>
+
+</center>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+<a href="{{ url_for('home') }}">
+<button type="button" class="btn btn-outline-success btn-lg">Home</button>
+</a>
+
+<a href="{{ url_for('mealcg') }}">
+<button type="button" class="btn btn-outline-primary btn-lg">Meal Category</button>
+</a>
+</div>
+<div class="container mt-5">
+<center><h1>MEALS</h1></center>
+</div>
+
+<div class="container mt-5">
+  {% for sm in am %}
+  <table class="table">
+  <tr><center><h1>{{sm.strMeal}}</h1></center></tr>
+  <tr><th>Meal_Id</th><td>{{sm.idMeal}}</td></tr>
+  <tr><th>Name</th><td>{{sm.strMeal}}</td></tr>
+  {% if sm.strDrinkAlternate!=None %}<tr><th>DrinkAlternate</th><td>{{sm.strDrinkAlternate}}</td></tr>{% endif %}
+  <tr><th>Category</th><td>{{sm.strCategory}}</td></tr>
+  <tr><th>Area</th><td>{{sm.strArea}}</td></tr>
+  <tr><th>Instructions</th><td>{{sm.strInstructions}}</td></tr>
+  <tr><th>Image</th><td><img src="{{sm.strMealThumb}}"></td></tr>
+  <tr><th>Tag</th><td>{{sm.strTags}}</td></tr>
+  <tr><th>Youtube</th><td>{{sm.strYoutube}}</td></tr>
+  <tr><th>Ingredients</th></tr>
+  <tr><td>{{sm.strIngredient1}}</td><td>{{sm.strMeasure1}}</td></tr>
+  <tr><td>{{sm.strIngredient2}}</td><td>{{sm.strMeasure2}}</td></tr>
+  <tr><td>{{sm.strIngredient3}}</td><td>{{sm.strMeasure3}}</td></tr>
+  <tr><td>{{sm.strIngredient4}}</td><td>{{sm.strMeasure4}}</td></tr>
+  <tr><td>{{sm.strIngredient5}}</td><td>{{sm.strMeasure5}}</td></tr>
+  <tr><td>{{sm.strIngredient6}}</td><td>{{sm.strMeasure6}}</td></tr>
+  <tr><td>{{sm.strIngredient7}}</td><td>{{sm.strMeasure7}}</td></tr>
+  <tr><td>{{sm.strIngredient8}}</td><td>{{sm.strMeasure8}}</td></tr>
+  <tr><td>{{sm.strIngredient9}}</td><td>{{sm.strMeasure9}}</td></tr>
+   {% if sm.strIngredient10!=None %}<tr><td>{{sm.strIngredient10}}</td><td>{{sm.strMeasure10}}</td></tr>{% endif %}
+   {% if sm.strIngredient11!=None %}<tr><td>{{sm.strIngredient11}}</td><td>{{sm.strMeasure11}}</td></tr>{% endif %}
+   {% if sm.strIngredient12!=None %}<tr><td>{{sm.strIngredient12}}</td><td>{{sm.strMeasure12}}</td></tr>{% endif %}
+   {% if sm.strIngredient13!=None %}<tr><td>{{sm.strIngredient13}}</td><td>{{sm.strMeasure13}}</td></tr>{% endif %}
+   {% if sm.strIngredient14!=None %}<tr><td>{{sm.strIngredient14}}</td><td>{{sm.strMeasure14}}</td></tr>{% endif %}
+   {% if sm.strIngredient15!=None %}<tr><td>{{sm.strIngredient15}}</td><td>{{sm.strMeasure15}}</td></tr>{% endif %}
+   {% if sm.strIngredient16!=None %}<tr><td>{{sm.strIngredient16}}</td><td>{{sm.strMeasure16}}</td></tr>{% endif %}
+   {% if sm.strIngredient17!=None %}<tr><td>{{sm.strIngredient17}}</td><td>{{sm.strMeasure17}}</td></tr>{% endif %}
+   {% if sm.strIngredient18!=None %}<tr><td>{{sm.strIngredient18}}</td><td>{{sm.strMeasure18}}</td></tr>{% endif %}
+   {% if sm.strIngredient19!=None %}<tr><td>{{sm.strIngredient19}}</td><td>{{sm.strMeasure19}}</td></tr>{% endif %}
+   {% if sm.strIngredient20!=None %}<tr><td>{{sm.strIngredient20}}</td><td>{{sm.strMeasure20}}</td></tr>{% endif %}
+  <tr><th>Source</th><td><link>{{sm.strSource}}</link></td></tr>
+  {% endfor %}
+</table>
+</div>
+
+</body>
+</html>
